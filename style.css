@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+}
+
+.plane {
+    height: 3000px;
+    width: 900px;
+    background-color: teal;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.plane div {
+    height: 100px;
+    width: 100px;
+}
