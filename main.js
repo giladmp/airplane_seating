@@ -1,8 +1,10 @@
 const plane = document.querySelector('.plane')
 let width = 9 // 6 seats, 2 windows & 1 path per row 
 let rows = 30
-let firstSeat = ""
-let secondSeat = ""
+let isCouple = false // true if we choose to joint seats, false for one passenger
+let firstSeat = ''
+let secondSeat = ''
+let oneSeat = ''
 
 
 // const squares = []
@@ -47,22 +49,36 @@ function getSeatLetter(squareNum) {
 
 function chooseSeats(event) {
     const seat = event.target
-    if (secondSeat === seat && firstSeat !== '') {
-        secondSeat = ''
-        seat.style.backgroundColor = ''
-    } else if (firstSeat === seat && secondSeat === '') {
-        firstSeat = ''
-        seat.style.backgroundColor = ''
-    } else if (firstSeat === seat && secondSeat !== '') {
-        firstSeat = secondSeat
-        secondSeat = ''
-        seat.style.backgroundColor = ''
-    } else if (firstSeat !== '' && secondSeat === '') {
-        secondSeat = seat
-        seat.style.backgroundColor = 'green'
-    } else if (firstSeat === '' && secondSeat === '') {
-        firstSeat = seat
-        seat.style.backgroundColor = 'green'
+    if (isCouple) {   
+        if (secondSeat === seat && firstSeat !== '') {
+            secondSeat = ''
+            seat.style.backgroundColor = ''
+        } else if (firstSeat === seat && secondSeat === '') {
+            firstSeat = ''
+            seat.style.backgroundColor = ''
+        } else if (firstSeat === seat && secondSeat !== '') {
+            firstSeat = secondSeat
+            secondSeat = ''
+            seat.style.backgroundColor = ''
+        } else if (firstSeat !== '' && secondSeat === '') {
+            secondSeat = seat
+            seat.style.backgroundColor = 'green'
+        } else if (firstSeat === '' && secondSeat === '') {
+            firstSeat = seat
+            seat.style.backgroundColor = 'green'
+        }
+    } else {
+        if (oneSeat === seat) {
+            oneSeat = ''
+            seat.style.backgroundColor = ''
+        } else if (oneSeat !== '') {
+            oneSeat.style.backgroundColor = ''
+            oneSeat = seat
+            seat.style.backgroundColor = 'red'
+        } else if (oneSeat === '') {
+            oneSeat = seat
+            seat.style.backgroundColor = 'red'
+        }
     }
 }
 
