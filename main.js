@@ -1,7 +1,7 @@
 const plane = document.querySelector('.plane')
 let width = 9
 let rows = 30
-const squares = []
+// const squares = []
 
 function createPlane() {
     for (let i = 0; i < width * rows; i++) {
@@ -15,8 +15,11 @@ function createPlane() {
             square.setAttribute('class', 'seat')
             square.setAttribute('name', [Math.floor(i / 9) + 1] + getSeatLetter(i))
         }
-        squares.push(square)
+        // squares.push(square)
         plane.appendChild(square)
+        if (square.className === 'seat') {
+            square.innerHTML = square.getAttribute('name').toUpperCase()
+        }
     }
 }
 

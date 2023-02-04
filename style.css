@@ -9,7 +9,7 @@ body {
 .plane {
     height: 3000px;
     width: 900px;
-    background-color: teal;
+    background-color: white;
     margin: 100px auto;
     display: flex;
     flex-wrap: wrap;
@@ -18,4 +18,23 @@ body {
 .plane div {
     height: 100px;
     width: 100px;
+}
+
+.path {
+    background-color: white;
+}
+
+.window {
+    background-color: blue;
+    border-radius: 50%;
+}
+
+.seat {
+    background-color: grey;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
 }
