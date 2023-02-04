@@ -1,6 +1,10 @@
 const plane = document.querySelector('.plane')
-let width = 9
+let width = 9 // 6 seats, 2 windows & 1 path per row 
 let rows = 30
+let firstSeat = ""
+let secondSeat = ""
+
+
 // const squares = []
 
 function createPlane() {
@@ -19,6 +23,7 @@ function createPlane() {
         plane.appendChild(square)
         if (square.className === 'seat') {
             square.innerHTML = square.getAttribute('name').toUpperCase()
+            square.addEventListener('click', chooseSeats)
         }
     }
 }
@@ -37,6 +42,27 @@ function getSeatLetter(squareNum) {
             return 'e'
         case 7:
             return 'f'
+    }
+}
+
+function chooseSeats(event) {
+    const seat = event.target
+    if (secondSeat === seat && firstSeat !== '') {
+        secondSeat = ''
+        seat.style.backgroundColor = ''
+    } else if (firstSeat === seat && secondSeat === '') {
+        firstSeat = ''
+        seat.style.backgroundColor = ''
+    } else if (firstSeat === seat && secondSeat !== '') {
+        firstSeat = secondSeat
+        secondSeat = ''
+        seat.style.backgroundColor = ''
+    } else if (firstSeat !== '' && secondSeat === '') {
+        secondSeat = seat
+        seat.style.backgroundColor = 'green'
+    } else if (firstSeat === '' && secondSeat === '') {
+        firstSeat = seat
+        seat.style.backgroundColor = 'green'
     }
 }
 
