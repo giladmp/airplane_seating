@@ -1,5 +1,6 @@
 body {
     margin: auto;
+    background-color: rgb(196, 196, 196);
 }
 
 .front {
@@ -43,7 +44,6 @@ body {
 
 .plane-container {
     margin-top: -45vw;
-    background-color: rgb(255, 255, 255);
     margin-left: auto;
     margin-right: auto;
 }
@@ -68,9 +68,9 @@ body {
 .seat .seat-shape {
     width: 9vw;
     height: 9vw;
-    border-radius: 15% 15% 15% 15% ;
+    border-radius: 5% 5% 5% 5% ;
     display: grid;
     place-items: center;
     font-size: 1.2rem;
-    background-color: rgb(40, 49, 58);
+    background-color: rgb(120, 120, 120);
 }
