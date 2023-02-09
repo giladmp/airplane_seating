@@ -1,3 +1,8 @@
+const flights = []
+// const flight {
+
+// }
+const passengers = []
 let isCouple = true // true if we choose to joint seats, false for one passenger
 let firstSeat = ''
 let secondSeat = ''

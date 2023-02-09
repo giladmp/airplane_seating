@@ -35,7 +35,9 @@ function onChooseSeat(event) {
 function paintSeat(seat, paint) {
     if (paint) {
         seat.style.backgroundColor = '#c3195d'
+        seat.style.color = 'white'
     } else {
         seat.style.backgroundColor = ''
+        seat.style.color = ''
     }
 }

@@ -1,6 +1,13 @@
 body {
-    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 2vw;
+    margin-bottom: auto;
     background-color: rgb(196, 196, 196);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .front {
@@ -32,6 +39,7 @@ body {
 .plane {
     height: 300vw;
     width: 90vw;
+    margin-top: -45vw;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -40,12 +48,6 @@ body {
     border-left: 4px solid black;
     border-right: 4px solid black;
     box-shadow: 4px solid black;
-}
-
-.plane-container {
-    margin-top: -45vw;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .plane div {
@@ -59,18 +61,40 @@ body {
 }
 
 .seat {
-    color: rgb(255, 255, 255);
     display: grid;
     place-items: center;
     z-index: 1;
 }
 
 .seat .seat-shape {
+    color: rgb(0, 0, 0);
     width: 9vw;
     height: 9vw;
-    border-radius: 5% 5% 5% 5% ;
+    border-radius: 20% 20% 20% 20%;
     display: grid;
     place-items: center;
-    font-size: 1.2rem;
-    background-color: rgb(120, 120, 120);
+    font-size: 0.8rem;
+    background-color: #c0c0c0;
+}
+
+.seat .seat-shape:hover {
+    cursor: pointer;
+}
+
+.rear {
+    width: 90vw;
+    height: 5vw;
+    background-color: rgb(255, 255, 255);
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal {
+    margin-top: -2vw;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    /* display: none; */
 }
