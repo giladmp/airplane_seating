@@ -1,40 +1,76 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     margin: auto;
 }
 
-.plane {
-    height: 3000px;
-    width: 900px;
+.front {
+    height: 90vw;
+    width: 90vw;
+    border-radius: 50% 50% 0% 0%;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    border: 4px solid black;
+    display: grid;
+    justify-content: center;
+}
+
+.windshield {
+    border-radius: 50% 50% 0% 0%;
+    width: 80vw;
+    height: 80vw;
+    margin-top: 4vw;
+    background-color: rgb(34, 141, 213);
+}
+
+.windshield-cover {
+    width: 80vw;
+    height: 60vw;
     background-color: white;
-    margin: 100px auto;
+    margin-top: -60vw;
+}
+
+.plane {
+    height: 300vw;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    box-shadow: 4px solid black;
+}
+
+.plane-container {
+    margin-top: -45vw;
+    background-color: rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .plane div {
-    height: 100px;
-    width: 100px;
-}
-
-.path {
-    background-color: white;
+    height: 10vw;
+    width: 10vw;
 }
 
 .window {
-    background-color: blue;
-    border-radius: 50%;
+    clip-path: ellipse(25% 40% at 50% 50%);
+    background-color: rgb(34, 141, 213);
 }
 
 .seat {
-    background-color: grey;
-    border-radius: 50%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
+    color: rgb(255, 255, 255);
+    display: grid;
+    place-items: center;
+    z-index: 1;
+}
+
+.seat .seat-shape {
+    width: 9vw;
+    height: 9vw;
+    border-radius: 15% 15% 15% 15% ;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+    background-color: rgb(40, 49, 58);
 }

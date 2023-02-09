@@ -19,13 +19,16 @@ function createPlane() {
             square.setAttribute('class', 'window')
         } else {
             square.setAttribute('class', 'seat')
-            square.setAttribute('name', [Math.floor(i / 9) + 1] + getSeatLetter(i))
+            square.setAttribute('name', [Math.floor(i / width) + 1] + getSeatLetter(i))
         }
         // squares.push(square)
         plane.appendChild(square)
         if (square.className === 'seat') {
-            square.innerHTML = square.getAttribute('name').toUpperCase()
-            square.addEventListener('click', chooseSeats)
+            const seatShape = document.createElement('div')
+            seatShape.setAttribute('class', 'seat-shape')
+            square.appendChild(seatShape)
+            seatShape.innerHTML = square.getAttribute('name').toUpperCase()
+            seatShape.addEventListener('click', chooseSeats)
         }
     }
 }
